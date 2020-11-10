@@ -1,7 +1,6 @@
 """
 Alessia De Giovannini
-Client Multithreading TCP 
-Test Alphabot 
+Client Multithreading TCP 1
 """
 import socket
 
