@@ -21,7 +21,7 @@ def log(x, y, descrizione, tipo):
     elif tipo == "critical":
         logging.critical(" " + x + "." + y + ", " + descrizione)
 
-def conn_client(conn,addr):
+def conn_client(conn, addr):
     logging.info("INIZIO COMUNICAZIONE CON " + str(addr))
     msg = conn.recv(1024)
     msg = msg.decode("utf-8")
