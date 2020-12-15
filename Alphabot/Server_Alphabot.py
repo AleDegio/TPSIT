@@ -3,12 +3,12 @@ Alessia De Giovannini
 Server Alphabot 
 """
 import socket
-import logging               
+import logging 
 import _thread
 import sqlite3
-from os.path import isfile
+from os.path import isfile 
 
-#funzione che gestrisce le stampe sul file .log
+#funzione che gestrisce le stampe sul file .log 
 def log(x, y, descrizione, tipo):   
     x = str(x)
     y = str(y)
@@ -36,7 +36,6 @@ def conn_client(conn, addr):
 
     path = "percorsi.db"
     connDB = None
-
 
     #connessione al db
     print()
@@ -104,7 +103,7 @@ def rispondiEchiudi(conn, connDB, msg):
         conn.send(bytes(msg,'UTF-8'))
     except socket.error:
         log(3, 1, "Perdita connessione", "critical")
-        printf("perdita connessione")
+        print("perdita connessione")
    
     conn.close()
     if connDB != None:
@@ -119,7 +118,6 @@ if __name__ == "__main__":
 
     print("inizializzazione")
     print("in attesa di client")
-
 
     s.bind((host, port))
     s.listen(5)     #Max 5 Client contemporaneamente 
