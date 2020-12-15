@@ -8,9 +8,10 @@ import _thread
 import sqlite3
 from os.path import isfile
 
-def log(x, y, descrizione, tipo):   #funzione che gestrisce le stampe sul file .log
+#funzione che gestrisce le stampe sul file .log
+def log(x, y, descrizione, tipo):   
     x = str(x)
-    y= str(y)
+    y = str(y)
     if tipo == "info":
         logging.info(" " + x + "." + y + ", " + descrizione)
     elif tipo == "warning":
@@ -26,7 +27,7 @@ def conn_client(conn,addr):
     msg = msg.decode("utf-8")
     
     if msg.find(",") == -1:
-        log(2, 1 , "Formato messaggi errato", "error")    
+        log(2, 1, "Formato messaggi errato", "error")    
         print("Formato messaggi errato")
         rispondiEchiudi(conn, None, "2.1, Formato messaggi errato")
         return -1
@@ -40,7 +41,7 @@ def conn_client(conn,addr):
     #connessione al db
     print()
     if(not isfile(path)):   #controllo che il file percorsi.db esista
-        log(4, 1 , "Connessione al db non avvenuta", "critical")    #stampo sul .log un errore generico
+        log(4, 1, "Connessione al db non avvenuta", "critical")    #stampo sul .log un errore generico
         print("Connessione con DB non avvenuta")
         rispondiEchiudi(conn, connDB, "4.1, Connessione al db non avvenuta")
         return -1
@@ -102,7 +103,7 @@ def rispondiEchiudi(conn, connDB, msg):
     try:
         conn.send(bytes(msg,'UTF-8'))
     except socket.error:
-        log(3,1, "Perdita connessione", "critical")
+        log(3, 1, "Perdita connessione", "critical")
         printf("perdita connessione")
    
     conn.close()
