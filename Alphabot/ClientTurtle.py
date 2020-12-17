@@ -33,13 +33,13 @@ def clientTurtle():
         for i in range(0, len(comandi)):
         #se il numero e' di 3 cifre lo divido per 3 
         #altrimenti uscirebbe fuori dallo schermo
-            if len(valori[i]) == 3:
+            if len(valori[i]) >= 3:
                 val = int(valori[i]) / 3
             else:
                 val = int(valori[i])
             eseguiComandi(comandi[i], val, tartaruga)
 
-        turtle.done()
+        turtle.done() #lascia aperta la finestra della turtle 
     else:
         print(data)
     #Chiusura Socket Client 
@@ -65,7 +65,7 @@ def convertString(data):
                 comandi.append("left")
         else: 
             while i<len(data) and data[i] in numeri:
-                valore+= data[i]
+                valore += data[i]
                 i = i + 1 
             i = i - 1
         if valore is not "":
@@ -78,7 +78,7 @@ def eseguiComandi(comando, valore, tartaruga):
     """Comandi: forward_x backward_y left_z right_k"""
     comandi = {"forward": "tartaruga.forward(valore)", "backward": "tartaruga.backward(valore)",
      "left": "tartaruga.left(valore)", "right": "tartaruga.right(valore)"}
-    eval(comandi[comando])
+    eval(comandi[comando]) #evita di fare le if annidate 
 
     """
     if comando == "forward":
