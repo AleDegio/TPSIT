@@ -1,0 +1,30 @@
+<!--Alessia De Giovannini-->
+<!--Pagina di Login-->
+ 
+<html>
+    <head>
+        <title>Login</title>
+        <meta name="viewport" content="width=device-width, ">
+        <link rel="stylesheet" href="..">
+    </head>
+
+<body background="https://www.ozarkradionews.com/ozarkradionews/wp-content/uploads/2020/09/What_is_Information_Technology.jpg">
+    <div class="container">
+        <font color="white"><h1 align="center">Login Page</h1></font>
+        <br>
+        <form action="" method="post">
+            <table align="center" border="5" bgcolor="white" bordercolor="black" size="6">
+                <tr><th>Username <input name="username" type="text" placeholder="Username"></th></tr>
+                <tr><th>Password <input name="password" type="text" placeholder="Password"></th></tr>
+                <tr><th>
+                    <input name="Annulla" id="btnReset" type="reset" value="Annulla" onClick="return confermaAnnulla()">
+                    <input class="btn btn-default" type="submit" value="Login">
+                </th></tr>
+            </table>
+        </form>
+        {% if error %}
+            <font color="white"><p class="error"><strong>Error: </strong>{{ error }} </font>
+        {% endif %}
+    </div>
+</body>
+</html>
