@@ -1,0 +1,36 @@
+<!--Alessia De Giovannini-->
+<!--Pagina di Login-->
+ 
+<html>
+    <head>
+        <title>Alphabot</title>
+    </head>
+    <body background="https://i.pinimg.com/originals/b1/2b/e6/b12be6b48f37275566bea772909bd410.jpg">
+        
+        <h2 align="center"><font color="white">Comanda l'Alphabot</font></h2>
+        <h1>____</h1>
+        <h1>____</h1>
+        <form  action=" " method="post">
+        <table align="center" bordercolor="black" size="6">
+            <tr>
+                <td align="center"></td>
+                <td align="center"><button type="submit" name="su"><img src="static/img/su.png" width="200" heighgt="260"></button></td>
+                <td align="center"></td>
+            </tr>
+            <tr>
+                <td align="center"><button type="submit" name="sinistra"><img src="static/img/sinistra.png" width="200" heighgt="260"></button></td>
+                <td align="center"></td>
+                <td align="center"><button type="submit" name="destra"><img src="static/img/destra.png" width="200" heighgt="260"></button></td>
+            </tr>
+            <tr>
+                <td align="center"></td>
+                <td align="center"><button type="submit" name="giu"><img src="static/img/giu.png" width="200" heighgt="260"></button></td>
+                <td align="center"></td>
+            </tr>
+        </table>
+        </form>
+        {% if msg %}
+            <font color="white"><p class="error"><strong>MSG: </strong>{{ msg }} </font>
+        {% endif %}
+    </body>
+</html>

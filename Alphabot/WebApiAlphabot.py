@@ -56,7 +56,7 @@ def inizio_fine_api_all():
     values = []
     for i in range(0, len(res)):
         keys.append(res[i][0])
-        values.append([res[i][1]])
+        values.append([res[i][1]] +  [res[i][2]])
 
     diz = dict(zip(keys, values)) #conversione in dizionario
     return flask.jsonify(diz)
