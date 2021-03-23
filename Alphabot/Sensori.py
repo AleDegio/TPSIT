@@ -1,6 +1,6 @@
 """
 Alessia De Giovannini
-Client Sensori 
+Libreria Sensori 
 """
 import time
 from AlphaBot import *

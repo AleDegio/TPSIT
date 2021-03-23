@@ -1,3 +1,7 @@
+"""
+Alessia De Giovennini 
+Comandi Alphabot 
+"""
 import RPi.GPIO as GPIO
 import time
 

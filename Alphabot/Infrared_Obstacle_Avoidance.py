@@ -1,3 +1,7 @@
+"""
+Alessia De Giovennini 
+Infrared Obstacle Avoidance 
+"""
 import RPi.GPIO as GPIO
 import time
 from AlphaBot import AlphaBot
@@ -12,8 +16,8 @@ GPIO.setup(DL,GPIO.IN,GPIO.PUD_UP)
 
 def gestioneOstacoli(comando, valore, Ab):
 
-	 comandi = {"forward": "alphaBot.forward()", "backward": "alphaBot.backward()",
-     "left": "alphaBot.setMotor(50, 0)", "right": "alphaBot.setMotor(0, 50)"}
+	comandi = {"forward": "alphaBot.forward()", "backward": "alphaBot.backward()",
+    "left": "alphaBot.setMotor(50, 0)", "right": "alphaBot.setMotor(0, 50)"}
 	finito = True
 
 	try:
